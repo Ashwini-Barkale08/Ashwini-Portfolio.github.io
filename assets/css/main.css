@@ -1229,7 +1229,7 @@ section,
 .profile-image img {
   
   width: 130px;
-  border: 3px solid red;
+ 
 
   height: 130px;
 
@@ -1237,27 +1237,7 @@ section,
   border-radius: 50%;
 }
 
-@keyframes border-color-change {
-  0% {
-    border-color: #eda0d3;
-  }
 
-  25% {
-    border-color: #df1529;
-  }
-
-  50% {
-    border-color: #00ffff;
-  }
-
-  75% {
-    border-color: #fed128;
-  }
-
-  100% {
-    border-color: #fafafa;
-  }
-}
 
 /*--------------------------------------------------------------
 # About Section
