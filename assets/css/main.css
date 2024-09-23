@@ -166,10 +166,18 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  background-color: #c50ba692;
   margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
+  font-size: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: neon 0.3s ease infinite;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  color: #de0e23;
+  text-shadow: 2px 2px #00ffff;
 }
 
 .scrolled .header {
@@ -820,8 +828,6 @@ section,
   font-family: var(--heading-font);
 }
 
-
-
 @media (max-width: 1199px) {
 
   section,
@@ -878,7 +884,6 @@ section,
     font-size: 24px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1048,21 +1053,6 @@ section,
   z-index: 3;
 }
 
-.header .logo h1 {
-  background-color: #8e087892;
-
-  font-size: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: neon 0.9s ease infinite;
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  color: red;
-  text-shadow: 2px 2px #fff;
-}
-
 .hero h2 {
   margin: 0;
   font-size: 74px;
@@ -1083,8 +1073,19 @@ section,
   font-family: "Lemon", serif;
 }
 
+.typed {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  /* Customize color */
+  text-decoration-thickness: 2px;
+  /* Adjust thickness */
+  text-underline-offset: 8px;
+  /* Increase offset for more gap */
+}
+
 .hero p span {
-  letter-spacing: 1px;
   padding: 5px 10px;
 }
 
@@ -1208,6 +1209,55 @@ section,
   }
 }
 
+/* heo profile image styles */
+
+.profile-image {
+  width: 130px;
+
+  height: 130px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+  overflow: hidden;
+}
+
+.profile-image img {
+  animation: border-color-change 1s infinite linear;
+  width: 130px;
+  border: 3px solid red;
+
+  height: 130px;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes border-color-change {
+  0% {
+    border-color: #eda0d3;
+  }
+
+  25% {
+    border-color: #df1529;
+  }
+
+  50% {
+    border-color: #00ffff;
+  }
+
+  75% {
+    border-color: #fed128;
+  }
+
+  100% {
+    border-color: #fafafa;
+  }
+}
 
 /*--------------------------------------------------------------
 # About Section
@@ -1518,8 +1568,6 @@ section,
   }
 }
 
-
-
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -1610,8 +1658,6 @@ section,
   color: var(--contrast-color);
 }
 
-
-
 /* Responsive styles for Services Section */
 @media (max-width: 992px) {
   .services .service-item {
@@ -1684,8 +1730,6 @@ section,
     font-size: 18px;
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -1861,9 +1905,6 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
-
-
-
 /* Responsive styles for Portfolio Section */
 @media (max-width: 768px) {
   .portfolio .portfolio-filters li {
@@ -1933,10 +1974,6 @@ section,
     font-size: 18px;
   }
 }
-
-
-
-
 
 /*--------------------------------------------------------------
 # Starter Section Section
@@ -2042,7 +2079,6 @@ section,
 .contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
 
 /* Responsive styles for Contact Section */
 @media (max-width: 768px) {
