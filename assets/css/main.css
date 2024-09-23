@@ -1221,13 +1221,13 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   overflow: hidden;
 }
 
 .profile-image img {
-  animation: border-color-change 1s infinite linear;
+  
   width: 130px;
   border: 3px solid red;
 
