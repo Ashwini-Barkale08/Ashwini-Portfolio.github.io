@@ -4,10 +4,10 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: 'Montserrat', sans-serif;
+  --default-font: "Montserrat", sans-serif;
 
-  --heading-font: 'Lemon', serif;
-  --nav-font: 'Acme', sans-serif;
+  --heading-font: "Lemon", serif;
+  --nav-font: "Acme", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -123,7 +123,7 @@ h6 {
 }
 
 .php-email-form .loading:before {
-  content: '';
+  content: "";
   display: inline-block;
   border-radius: 50%;
   width: 24px;
@@ -246,7 +246,7 @@ h6 {
   }
 
   .navmenu>ul>li>a:before {
-    content: '';
+    content: "";
     position: absolute;
     height: 2px;
     bottom: -6px;
@@ -582,7 +582,7 @@ h6 {
 .footer .tea {
   font-size: 22px;
   font-weight: bold;
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
 }
 
 .footer .copyright {
@@ -612,7 +612,7 @@ h6 {
 }
 
 #preloader:before {
-  content: '';
+  content: "";
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -751,7 +751,7 @@ h6 {
 }
 
 .page-title nav ol li+li::before {
-  content: '/';
+  content: "/";
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
@@ -798,7 +798,7 @@ section,
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   width: 120px;
   height: 1px;
   display: inline-block;
@@ -1050,7 +1050,7 @@ section,
   text-stroke: 2px hotpink;
   text-shadow: 6px 6px red;
 
-  font-family: 'Lemon', serif;
+  font-family: "Lemon", serif;
 }
 
 .hero p {
@@ -1058,7 +1058,7 @@ section,
   font-size: 18px;
   text-shadow: 2px 2px #ff0000;
 
-  font-family: 'Lemon', serif;
+  font-family: "Lemon", serif;
 }
 
 .typed {
@@ -1235,7 +1235,6 @@ section,
 
 /* about section all design and detail */
 
-
 .skills-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1245,7 +1244,6 @@ section,
   justify-items: center;
   /* Center items horizontally */
   padding: 20px 0;
-
 }
 
 /* Skill Items */
@@ -1293,9 +1291,6 @@ section,
     color: #eda0d3;
   }
 }
-
-
-
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -1384,7 +1379,7 @@ section,
 }
 
 .resume .resume-item::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 16px;
@@ -1574,7 +1569,7 @@ section,
 
 .services .service-item .icon::before {
   position: absolute;
-  content: '';
+  content: "";
   left: -8px;
   top: -8px;
   height: 100%;
@@ -1721,7 +1716,6 @@ section,
   }
 }
 
-
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1729,8 +1723,6 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-
-
 
 .contact .info-item {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -1900,7 +1892,6 @@ section,
     /* Adjusted padding for smaller screens */
   }
 }
-
 
 @media (max-width: 480px) {
   .contact .info-item h3 {
