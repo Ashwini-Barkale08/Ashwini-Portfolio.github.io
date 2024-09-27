@@ -1505,6 +1505,9 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
@@ -1688,6 +1691,36 @@ section,
     font-size: 18px;
   }
 }
+
+/* Additional Responsive Styles */
+@media (max-width: 400px) {
+  .services .service-item {
+    padding: 20px 5px;
+    /* Further reduced padding for very small screens */
+  }
+
+  .services .service-item h3 {
+    font-size: 14px;
+    /* Reduce heading size */
+  }
+
+  .services .service-item p {
+    font-size: 10px;
+    /* Reduce paragraph size */
+  }
+
+  .services .service-item .icon {
+    width: 36px;
+    /* Reduce icon size */
+    height: 36px;
+  }
+
+  .services .service-item .icon i {
+    font-size: 16px;
+    /* Reduce icon font size */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio Section
