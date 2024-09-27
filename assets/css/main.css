@@ -4,10 +4,10 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Montserrat", sans-serif;
+  --default-font: 'Montserrat', sans-serif;
 
-  --heading-font: "Lemon", serif;
-  --nav-font: "Acme", sans-serif;
+  --heading-font: 'Lemon', serif;
+  --nav-font: 'Acme', sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -123,7 +123,7 @@ h6 {
 }
 
 .php-email-form .loading:before {
-  content: "";
+  content: '';
   display: inline-block;
   border-radius: 50%;
   width: 24px;
@@ -246,7 +246,7 @@ h6 {
   }
 
   .navmenu>ul>li>a:before {
-    content: "";
+    content: '';
     position: absolute;
     height: 2px;
     bottom: -6px;
@@ -568,22 +568,10 @@ h6 {
   width: 36px;
   height: 36px;
   transition: 0.3s;
-  animation: 2s linear 1s infinite alternate slidein;
+  -webkit-animation: squareToCircle 2.5s 1s infinite alternate;
   border: 2px solid aqua;
 
   text-shadow: 2px 2px red;
-}
-
-@keyframes slidein {
-  from {
-    transform: translateX(0);
-    /* Starting point */
-  }
-
-  to {
-    transform: translateX(100px);
-    /* Ending point */
-  }
 }
 
 .footer .social-links a:hover {
@@ -594,7 +582,7 @@ h6 {
 .footer .tea {
   font-size: 22px;
   font-weight: bold;
-  font-family: "Acme", sans-serif;
+  font-family: 'Acme', sans-serif;
 }
 
 .footer .copyright {
@@ -624,7 +612,7 @@ h6 {
 }
 
 #preloader:before {
-  content: "";
+  content: '';
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -763,7 +751,7 @@ h6 {
 }
 
 .page-title nav ol li+li::before {
-  content: "/";
+  content: '/';
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
@@ -810,7 +798,7 @@ section,
 }
 
 .section-title h2::after {
-  content: "";
+  content: '';
   width: 120px;
   height: 1px;
   display: inline-block;
@@ -1062,7 +1050,7 @@ section,
   text-stroke: 2px hotpink;
   text-shadow: 6px 6px red;
 
-  font-family: "Lemon", serif;
+  font-family: 'Lemon', serif;
 }
 
 .hero p {
@@ -1070,7 +1058,7 @@ section,
   font-size: 18px;
   text-shadow: 2px 2px #ff0000;
 
-  font-family: "Lemon", serif;
+  font-family: 'Lemon', serif;
 }
 
 .typed {
@@ -1107,8 +1095,44 @@ section,
   margin-right: 20px;
   transition: 0.3s;
   text-shadow: 2px 2px red;
+  width: 50px;
+  height: 50px;
+  background-color: #ff69b4;
+  -webkit-animation: squareToCircle 2.5s 1s infinite alternate;
+  /* 
+  animation: 2s linear 1s infinite alternate slidein; */
+}
 
-  animation: 2s linear 1s infinite alternate slidein;
+@-webkit-keyframes squareToCircle {
+  0% {
+    border-radius: 0 0 0 0;
+    background: coral;
+    transform: rotate(0deg);
+  }
+
+  25% {
+    border-radius: 50% 0 0 0;
+    background: darksalmon;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    border-radius: 50% 50% 0 0;
+    background: indianred;
+    transform: rotate(90deg);
+  }
+
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: lightcoral;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    background: darksalmon;
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes slidein {
@@ -1209,89 +1233,47 @@ section,
   }
 }
 
-/* heo profile image styles */
+/* Skills Section */
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 items per row */
+  gap: 20px;
+  /* Space between skill items */
+  justify-items: center;
+  /* Center items horizontally */
+  padding: 20px 0;
+  animation: 4s linear 2s infinite alternate slidein;
+}
 
-.profile-image {
-  width: 130px;
-
-  height: 130px;
-
-  border-radius: 50%;
-
+/* Skill Items */
+.skill-item {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
-
-  overflow: hidden;
-}
-
-.profile-image img {
-  
-  width: 130px;
- 
-
-  height: 130px;
-
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-
-
-/*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-.about .content h2 {
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.about .content ul strong {
-  margin-right: 10px;
-}
-
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--accent-color);
-  line-height: 0;
-}
-
-/*--------------------------------------------------------------
-# Skills Section
-----------------------------------------------------------*/
-
-.col-lg-4 h3 {
-  color: #00ffff;
-  text-shadow: 2px 2px #fed128;
+  text-align: center;
+  font-size: 18px;
+  margin: 0 auto;
+  animation: neon 0.4s ease infinite;
   text-transform: uppercase;
-  padding-bottom: 30px;
-  font-family: monospace;
-}
-
-.col-lg-4 {
-  font-size: 15px;
-  line-height: 45px;
-
   font-weight: bold;
 }
 
-.skill-item {
-  font-size: 18px;
-  margin: 1rem auto;
-  animation: neon 0.5s ease infinite;
+/* Circular Image Styles */
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* Adjust font size and alignment */
+.skill-item span {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
 }
 
 @keyframes neon {
@@ -1310,81 +1292,10 @@ section,
   }
 }
 
-/* Responsive styles for About Section */
-@media (max-width: 992px) {
-  .about .content h2 {
-    font-size: 20px;
-  }
-
-  .about .content ul li {
-    margin-bottom: 8px;
-  }
-
-  .about .content ul i {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about .content h2 {
-    font-size: 18px;
-  }
-
-  .about .content ul li {
-    margin-bottom: 6px;
-  }
-
-  .about .content ul i {
-    font-size: 12px;
-  }
-}
-
-/* Responsive styles for mobile screens */
-@media (max-width: 991px) {
-  .col-lg-4 {
-    font-size: 14px;
-    line-height: 40px;
-  }
-
-  .col-lg-4 h3 {
-    font-size: 18px;
-    /* Adjusted for smaller screens */
-    padding-bottom: 20px;
-    /* Reduced padding */
-  }
-
-  .skill-item {
-    font-size: 16px;
-    /* Smaller font size for better fit */
-    margin: 0.5rem auto;
-    /* Reduced margin for compactness */
-  }
-}
-
-@media (max-width: 767px) {
-  .col-lg-4 {
-    font-size: 12px;
-    line-height: 30px;
-  }
-
-  .col-lg-4 h3 {
-    font-size: 16px;
-    /* Further reduced for mobile */
-    padding-bottom: 15px;
-    /* Further reduced padding */
-  }
-
-  .skill-item {
-    font-size: 14px;
-    /* Adjusted for small screens */
-    margin: 0.25rem auto;
-    /* Compact margin for better fit */
-  }
-}
-
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
+
 .resume .resume-title {
   color: var(--heading-color);
   font-size: 26px;
@@ -1430,7 +1341,7 @@ section,
 }
 
 .resume .resume-item::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;
@@ -1557,17 +1468,41 @@ section,
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
   height: 100%;
-  animation: 4s linear 0.5s infinite alternate slidein;
+  animation: wiggle 1.75s linear infinite;
   border: 2px solid #ff69b4;
 }
 
-@keyframes slidein {
-  0% {
-    transform: translateX(0);
+/* Keyframes */
+@keyframes wiggle {
+
+  0%,
+  7% {
+    transform: rotateZ(0);
   }
 
+  15% {
+    transform: rotateZ(-15deg);
+  }
+
+  20% {
+    transform: rotateZ(10deg);
+  }
+
+  25% {
+    transform: rotateZ(-10deg);
+  }
+
+  30% {
+    transform: rotateZ(6deg);
+  }
+
+  35% {
+    transform: rotateZ(-4deg);
+  }
+
+  40%,
   100% {
-    transform: translateX(100px);
+    transform: rotateZ(0);
   }
 }
 
@@ -1593,7 +1528,7 @@ section,
 
 .services .service-item .icon::before {
   position: absolute;
-  content: "";
+  content: '';
   left: -8px;
   top: -8px;
   height: 100%;
@@ -1714,260 +1649,17 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-  text-align: center;
-}
-
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0 10px;
-  line-height: 1;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
-}
-
-.portfolio .portfolio-content {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-content img {
-  transition: 0.3s;
-}
-
-.portfolio .portfolio-content .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-}
-
-.portfolio .portfolio-content .portfolio-info h4 {
-  font-size: 14px;
-  padding: 5px 10px;
-  font-weight: 400;
-  color: #ffffff;
-  display: inline-block;
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info p {
-  position: absolute;
-  bottom: 10px;
-  text-align: center;
-  display: inline-block;
-  left: 0;
-  right: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.portfolio .portfolio-content .portfolio-info .preview-link,
-.portfolio .portfolio-content .portfolio-info .details-link {
-  position: absolute;
-  left: calc(50% - 40px);
-  font-size: 26px;
-  top: calc(50% - 14px);
-  color: #fff;
-  transition: 0.3s;
-  line-height: 1.2;
-}
-
-.portfolio .portfolio-content .portfolio-info .preview-link:hover,
-.portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
-  font-size: 34px;
-  line-height: 0;
-}
-
-.portfolio .portfolio-content:hover .portfolio-info {
-  opacity: 1;
-}
-
-.portfolio .portfolio-content:hover img {
-  transform: scale(1.1);
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details Section
---------------------------------------------------------------*/
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-/* Responsive styles for Portfolio Section */
-@media (max-width: 768px) {
-  .portfolio .portfolio-filters li {
-    font-size: 16px;
-    margin: 0 7px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info h4 {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info p {
-    font-size: 14px;
-    bottom: 8px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info .preview-link,
-  .portfolio .portfolio-content .portfolio-info .details-link {
-    font-size: 24px;
-    top: calc(50% - 12px);
-  }
-
-  .portfolio .portfolio-content:hover img {
-    transform: scale(1.05);
-  }
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info h4 {
-    font-size: 10px;
-    padding: 3px 6px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info p {
-    font-size: 12px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info .preview-link,
-  .portfolio .portfolio-content .portfolio-info .details-link {
-    font-size: 20px;
-    top: calc(50% - 10px);
-  }
-
-  .portfolio .portfolio-content:hover img {
-    transform: scale(1.03);
-  }
-}
-
-@media (max-width: 400px) {
-  .portfolio .portfolio-content .portfolio-info h4 {
-    font-size: 9px;
-    padding: 2px 5px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info p {
-    font-size: 11px;
-  }
-
-  .portfolio .portfolio-content .portfolio-info .preview-link,
-  .portfolio .portfolio-content .portfolio-info .details-link {
-    font-size: 18px;
-  }
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px 30px;
+  padding: 30px;
+  /* Increased padding */
+  margin-bottom: 30px;
+
+  /* Added margin to separate items */
 }
 
 .contact .info-item .icon {
@@ -1981,18 +1673,21 @@ section,
   align-items: center;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 20px;
+  /* Increased margin */
 }
 
 .contact .info-item h3 {
   font-size: 18px;
   font-weight: 700;
-  margin: 0 0 2px 0;
+  margin-bottom: 10px;
+  /* Added more space below heading */
 }
 
 .contact .info-item p {
   padding: 0;
-  margin-bottom: 0;
+  margin: 0 0 10px 0;
+  /* Added margin to improve spacing */
   font-size: 14px;
 }
 
@@ -2000,7 +1695,8 @@ section,
   font-size: 24px;
   display: inline-block;
   line-height: 1;
-  margin: 4px 6px 0 0;
+  margin: 6px 8px 0 0;
+  /* Increased margin */
   transition: 0.3s;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
@@ -2009,159 +1705,119 @@ section,
   color: var(--accent-color);
 }
 
-.contact .php-email-form {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+/* General Form Styles */
+.contact-form {
+  max-width: 800px;
+  margin: 50px auto;
+  /* Added margin for top and bottom spacing */
   padding: 30px;
-  margin-top: 30px;
+  /* Increased padding */
+  background: linear-gradient(-45deg, #ee7752, #b7cc00, #e2166b, #8da59f);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  border-radius: 10px;
 }
 
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.contact .php-email-form input[type="text"],
-.contact .php-email-form input[type="email"],
-.contact .php-email-form textarea {
-  color: var(--default-color);
-  background-color: color-mix(in srgb,
-      var(--background-color),
-      transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
+.contact-form .form-control {
+  width: 100%;
+  padding: 15px 20px;
+  /* Added horizontal padding */
+  margin-bottom: 25px;
+  /* Increased margin-bottom for more spacing between inputs */
+  font-size: 16px;
+  /* Increased font size for readability */
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
 }
 
-.contact .php-email-form input[type="text"]:focus,
-.contact .php-email-form input[type="email"]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
+.contact-form .form-control:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-.contact .php-email-form input[type="text"]::placeholder,
-.contact .php-email-form input[type="email"]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+.contact-form textarea.form-control {
+  resize: none;
 }
 
-.contact .php-email-form button[type="submit"] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
+.contact-form .input-icon {
+  position: relative;
+  margin-bottom: 30px;
+  /* Added space below each input field */
 }
 
-.contact .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+.contact-form .input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  /* Increased icon size */
+  color: #cc720b;
 }
 
-/* Responsive styles for Contact Section */
+.contact-form .form-control {
+  padding-left: 50px;
+  /* Adjusted padding for better spacing with icons */
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 15px 50px;
+  /* Increased padding for the button */
+  background-color: #c90f94;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  /* Increased font size for visibility */
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #0092b3;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
-  .contact .info-item {
-    padding: 15px 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
-  }
-
-  .contact .info-item h3 {
-    font-size: 16px;
-  }
-
-  .contact .info-item p {
-    font-size: 13px;
-  }
-
-  .contact .info-item .icon {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-  }
-
-  .contact .php-email-form {
-    padding: 25px;
-  }
-
-  .contact .php-email-form input[type="text"],
-  .contact .php-email-form input[type="email"],
-  .contact .php-email-form textarea {
-    font-size: 13px;
-  }
-
-  .contact .php-email-form button[type="submit"] {
-    padding: 8px 25px;
-  }
-}
-
-@media (max-width: 575px) {
-  .contact .info-item {
-    padding: 10px 15px;
-  }
-
-  .contact .info-item .icon {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
-
-  .contact .info-item h3 {
-    font-size: 14px;
-  }
-
-  .contact .info-item p {
-    font-size: 12px;
-  }
-
-  .contact .php-email-form {
+  .contact-form {
     padding: 20px;
+    margin: 30px auto;
+    /* Adjusted margin for smaller screens */
   }
 
-  .contact .php-email-form input[type="text"],
-  .contact .php-email-form input[type="email"],
-  .contact .php-email-form textarea {
-    font-size: 12px;
+  .submit-btn {
+    padding: 12px 40px;
+    /* Adjusted padding for smaller screens */
   }
 
-  .contact .php-email-form button[type="submit"] {
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 400px) {
   .contact .info-item {
-    padding: 8px 10px;
+    padding: 20px;
+    /* Reduced padding on smaller screens */
+    margin-bottom: 20px;
   }
 
-  .contact .info-item .icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .contact .info-item h3 {
-    font-size: 12px;
-  }
-
-  .contact .info-item p {
-    font-size: 11px;
-  }
-
-  .contact .php-email-form {
-    padding: 15px;
-  }
-
-  .contact .php-email-form input[type="text"],
-  .contact .php-email-form input[type="email"],
-  .contact .php-email-form textarea {
-    font-size: 11px;
-  }
-
-  .contact .php-email-form button[type="submit"] {
-    padding: 6px 18px;
-    font-size: 13px;
+  .contact-form .form-control {
+    font-size: 14px;
+    /* Reduced font size for smaller screens */
+    padding: 12px 15px;
+    /* Adjusted padding for smaller screens */
   }
 }

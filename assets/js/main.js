@@ -1,5 +1,3 @@
-
-
 (function () {
   "use strict";
 
@@ -142,8 +140,6 @@
     });
   });
 
-
-
   // h1nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
   function updateText(text) {
     let delay = 200;
@@ -163,8 +159,6 @@
   }
 
   updateText("Ashwini ");
-
-  
 
   /**
    * Init swiper sliders
