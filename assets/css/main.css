@@ -91,7 +91,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -137,7 +136,6 @@ h6 {
 .scrolled .header {
   --background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -479,7 +477,6 @@ h6 {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Preloader styling for the website
 --------------------------------------------------------------*/
@@ -514,7 +511,6 @@ h6 {
     transform: rotate(360deg);
   }
 }
-
 
 /*--------------------------------------------------------------
 # Scroll Top Button for the website
@@ -658,7 +654,6 @@ section,
     scroll-margin-top: 66px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Global Section Titles for the website
@@ -1618,6 +1613,412 @@ section,
 # Portfolio Section
 --------------------------------------------------------------*/
 
+/* icons style beautiful */
+
+@keyframes colorChange {
+  5% {
+    background-color: #f0f0f0;
+    /* Initial color */
+  }
+
+  25% {
+    background-color: #ff00dd;
+    /* First color change */
+  }
+
+  50% {
+    background-color: #eeff00;
+    /* Second color change */
+  }
+
+  75% {
+    background-color: #00ccff;
+    /* Third color change */
+  }
+
+  100% {
+    background-color: #f0f0f0;
+    /* Back to initial color */
+  }
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  /* Center the icons horizontally */
+  align-items: center;
+  /* Center the icons vertically */
+}
+
+.icon-link {
+  text-decoration: none;
+  /* Remove underline from links */
+  margin: 0 15px;
+  /* Space between icons */
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  /* Center icon inside circle */
+  align-items: center;
+  /* Center icon inside circle */
+  width: 60px;
+  /* Circle diameter */
+  height: 60px;
+  /* Circle diameter */
+  border-radius: 50%;
+  /* Make it circular */
+  background-color: #f0f0f0;
+  /* Default circle color */
+  animation: colorChange 4s infinite;
+  /* Automatic color change animation */
+  transition: color 0.3s;
+  /* Smooth transition for icon color */
+}
+
+.icon-circle i {
+  font-size: 24px;
+  /* Adjust icon size as needed */
+  color: #000000;
+  /* Default icon color */
+  transition: color 0.3s;
+  /* Smooth transition for icon color */
+}
+
+.icon-circle:hover i {
+  color: #360606;
+  /* Change icon color to white on hover */
+}
+
+.icon-circle:hover {
+  animation: none;
+  /* Pause animation on hover */
+}
+
+.icon-link.active .icon-circle {
+  background-color: #007bff;
+  /* Active circle color */
+}
+
+.icon-link.active i {
+  color: #ffffff;
+  /* Active icon color */
+}
+
+
+
+/* Background and section style */
+.section-notebook {
+  background: linear-gradient(-45deg, #ee7752, #b7cc00, #e2166b, #8da59f);
+  animation: gradient 3s ease infinite;
+  padding: 90px 40px;
+  /* Increased top and bottom padding */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+
+
+.section-title p {
+  font-family: "Indie Flower", cursive;
+  font-size: 1.4rem;
+  /* Default size */
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  /* Increased gap between cards */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards_item {
+  padding: 0;
+}
+
+/* Card styling with torn effect */
+.card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Torn edge effect on the left */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 20px;
+  height: 100%;
+  background: white;
+  z-index: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 90%, 10% 80%, 0% 70%);
+}
+
+/* Card image */
+.card_image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card_content {
+  padding: 20px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.card_title {
+  font-size: 1.8rem;
+  /* Default size */
+  color: #0cde24;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.card_text p {
+  font-size: 1rem;
+  /* Default size */
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.card_text .note {
+  font-weight: bold;
+  color: #ff6347;
+}
+
+/* Notebook styling */
+.section-notebook:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: red;
+  z-index: 1;
+}
+
+/* Dot styles */
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  animation: animate linear infinite;
+}
+
+.dot:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.dot:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation-duration: 14s;
+}
+
+.dot:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation-duration: 9s;
+}
+
+.dot:nth-child(4) {
+  top: 66%;
+  left: 30%;
+  animation-duration: 11s;
+}
+
+.dot:nth-child(5) {
+  top: 90%;
+  left: 10%;
+  animation-duration: 13s;
+}
+
+.dot:nth-child(6) {
+  top: 30%;
+  left: 60%;
+  animation-duration: 8s;
+}
+
+.dot:nth-child(7) {
+  top: 70%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.dot:nth-child(8) {
+  top: 75%;
+  left: 60%;
+  animation-duration: 14s;
+}
+
+.dot:nth-child(9) {
+  top: 50%;
+  left: 50%;
+  animation-duration: 11s;
+}
+
+.dot:nth-child(10) {
+  top: 45%;
+  left: 20%;
+  animation-duration: 14s;
+}
+
+.dot:nth-child(11) {
+  top: 10%;
+  left: 90%;
+  animation-duration: 13s;
+}
+
+.dot:nth-child(12) {
+  top: 20%;
+  left: 70%;
+  animation-duration: 11s;
+}
+
+.dot:nth-child(13) {
+  top: 20%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.dot:nth-child(14) {
+  top: 60%;
+  left: 5%;
+  animation-duration: 9s;
+}
+
+.dot:nth-child(15) {
+  top: 90%;
+  left: 80%;
+  animation-duration: 12s;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+
+  100% {
+    transform: scale(2) translateY(-100px) rotate(360deg);
+  }
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container-notebook {
+    padding: 15px;
+    /* Further reduced padding */
+  }
+
+
+  .section-title p {
+    font-size: 1rem;
+    /* Adjusted size for mobile */
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    /* Stack cards vertically */
+    gap: 15px;
+    /* Reduced gap between cards */
+  }
+
+  .card {
+    margin: 0;
+    /* Remove margin */
+  }
+
+  .card_image img {
+    height: auto;
+    /* Maintain aspect ratio */
+    max-width: 100%;
+    /* Ensure images do not overflow */
+  }
+
+  .card_content {
+    padding: 15px;
+    /* Reduce padding */
+  }
+
+  .card_title {
+    font-size: 1.5rem;
+    /* Adjust title font size */
+    margin-bottom: 10px;
+    /* Add bottom margin */
+  }
+
+  .card_text p {
+    font-size: 0.9rem;
+    /* Adjust paragraph font size */
+    line-height: 1.5;
+    /* Increase line height */
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-circle {
+    width: 40px;
+    /* Further adjust size */
+    height: 40px;
+    /* Further adjust size */
+  }
+
+  .icon-circle i {
+    font-size: 18px;
+    /* Adjust icon size */
+  }
+
+  .icon-title {
+    font-size: 1rem;
+    /* Adjust icon title size */
+  }
+
+  .dot {
+    height: 10px;
+    /* Decrease size of dots */
+    width: 10px;
+    /* Decrease size of dots */
+  }
+
+  .section-notebook {
+    padding: 20px 10px;
+    /* Adjust padding for mobile */
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    /* Single column layout */
+  }
+}
+
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
@@ -1801,7 +2202,6 @@ section,
   }
 }
 
-
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -1873,7 +2273,6 @@ section,
 }
 
 /* responsive design */
-
 
 /* Responsive styling */
 @media (max-width: 768px) {
