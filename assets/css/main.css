@@ -5,7 +5,6 @@
 /* Fonts */
 :root {
   --default-font: "Montserrat", sans-serif;
-
   --heading-font: "Lemon", serif;
   --nav-font: "Acme", sans-serif;
 }
@@ -92,57 +91,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -189,6 +137,7 @@ h6 {
 .scrolled .header {
   --background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -530,77 +479,9 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
-.footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
-  position: relative;
-}
-
-.footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-.footer .social-links {
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links a {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  color: var(--nav-color);
-  line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-  -webkit-animation: squareToCircle 2.5s 1s infinite alternate;
-  border: 2px solid aqua;
-
-  text-shadow: 2px 2px red;
-}
-
-.footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
-}
-
-.footer .tea {
-  font-size: 22px;
-  font-weight: bold;
-  font-family: "Acme", sans-serif;
-}
-
-.footer .copyright {
-  padding-top: 25px;
-  font-size: 18px;
-  text-transform: capitalize;
-
-  font-weight: bold;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .credits {
-  font-size: 19px;
-  padding-top: 5px;
-}
 
 /*--------------------------------------------------------------
-# Preloader
+# Preloader styling for the website
 --------------------------------------------------------------*/
 #preloader {
   position: fixed;
@@ -634,8 +515,9 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
-# Scroll Top Button
+# Scroll Top Button for the website
 --------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
@@ -679,7 +561,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Page Titles & Breadcrumbs
+# Global Page Titles & Breadcrumbs for the website
 --------------------------------------------------------------*/
 .page-title {
   color: var(--default-color);
@@ -758,7 +640,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Sections
+# Global Sections for the website
 --------------------------------------------------------------*/
 section,
 .section {
@@ -777,8 +659,9 @@ section,
   }
 }
 
+
 /*--------------------------------------------------------------
-# Global Section Titles
+# Global Section Titles for the website
 --------------------------------------------------------------*/
 .section-title {
   padding-bottom: 60px;
@@ -874,11 +757,10 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section of the website
 --------------------------------------------------------------*/
 
-/* resume button style */
-
+/* resume button of the hero section */
 .btn {
   margin-top: 30px;
   margin-left: 40px;
@@ -904,8 +786,6 @@ section,
   box-shadow: 0 4px 6px rgba(184, 4, 4, 0.863);
   /* Button shadow for depth */
   animation: fast-pulse 0.8s infinite;
-
-  /* Faster pulse animation */
 }
 
 .btn i {
@@ -990,6 +870,7 @@ section,
   }
 }
 
+/*  */
 /* hero h1 wavy style  */
 
 .wavy {
@@ -1233,7 +1114,10 @@ section,
   }
 }
 
+/* ================================================================= */
+
 /* about section all design and detail */
+
 .skills-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1243,7 +1127,6 @@ section,
   justify-items: center;
   /* Center items horizontally */
   padding: 20px 0;
-
 }
 
 /* Skill Items */
@@ -1292,9 +1175,9 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 # Resume Section
---------------------------------------------------------------*/
+----------------------------------------------------------------------------------*/
 
 .resume .resume-title {
   color: var(--heading-color);
@@ -1353,6 +1236,7 @@ section,
 }
 
 /* Responsive styles for Resume Section */
+
 @media (max-width: 992px) {
   .resume .resume-title {
     font-size: 22px;
@@ -1462,9 +1346,6 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
@@ -1508,6 +1389,8 @@ section,
     transform: rotateZ(0);
   }
 }
+
+/* services item */
 
 .services .service-item .icon {
   margin: 0 auto;
@@ -1577,6 +1460,7 @@ section,
 }
 
 /* Responsive styles for Services Section */
+
 @media (max-width: 992px) {
   .services .service-item {
     padding: 60px 15px;
@@ -1872,4 +1756,73 @@ section,
     padding: 10px 30px;
     /* Adjust button padding for smaller screens */
   }
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.footer .social-links {
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--nav-color);
+  line-height: 1;
+  margin: 0 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  -webkit-animation: squareToCircle 2.5s 1s infinite alternate;
+  border: 2px solid aqua;
+
+  text-shadow: 2px 2px red;
+}
+
+.footer .social-links a:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  text-decoration: none;
+}
+
+.footer .tea {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Acme", sans-serif;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  font-size: 18px;
+  text-transform: capitalize;
+
+  font-weight: bold;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .credits {
+  font-size: 19px;
+  padding-top: 5px;
 }
