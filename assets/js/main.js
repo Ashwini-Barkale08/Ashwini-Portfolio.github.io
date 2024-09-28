@@ -45,16 +45,6 @@
   });
 
   /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll(".navmenu .toggle-dropdown").forEach((navmenu) => {
-    navmenu.addEventListener("click", function (e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle("active");
-      this.parentNode.nextElementSibling.classList.toggle("dropdown-active");
-      e.stopImmediatePropagation();
-    });
-  });
 
   /**
    * Preloader
@@ -123,24 +113,8 @@
    */
   new PureCounter();
 
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll(".skills-animation");
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: "80%",
-      handler: function (direction) {
-        let progress = item.querySelectorAll(".progress .progress-bar");
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute("aria-valuenow") + "%";
-        });
-      },
-    });
-  });
+// h2 styling animation//
 
-  // h1nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
   function updateText(text) {
     let delay = 200;
 
@@ -160,28 +134,7 @@
 
   updateText("Ashwini ");
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
-  }
-
-  window.addEventListener("load", initSwiper);
-
-  /**
-   * Initiate glightbox
-   */
   const glightbox = GLightbox({
     selector: ".glightbox",
   });

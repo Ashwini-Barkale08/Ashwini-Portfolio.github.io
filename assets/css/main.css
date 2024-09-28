@@ -1115,9 +1115,7 @@ section,
 }
 
 /* ================================================================= */
-
-/* about section all design and detail */
-
+/* Base styles for skills section */
 .skills-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1159,6 +1157,7 @@ section,
   margin-top: 5px;
 }
 
+/* Neon animation effect */
 @keyframes neon {
 
   0%,
@@ -1172,6 +1171,57 @@ section,
     text-shadow: 0 0 2px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b,
       0 0 5px #800e0b, 0 0 2px #800e0b, 4px 4px 2px #40340a;
     color: #eda0d3;
+  }
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .skills-content {
+    grid-template-columns: repeat(4, 1fr);
+    /* Ensure 4 columns on smaller screens */
+    gap: 15px;
+    /* Reduce gap for better fit */
+  }
+
+  .skill-icon {
+    width: 35px;
+    /* Slightly smaller icons for mobile */
+    height: 35px;
+  }
+
+  .skill-item {
+    font-size: 14px;
+    /* Adjust font size for mobile */
+  }
+
+  .skill-item span {
+    font-size: 10px;
+    /* Smaller font for skill text */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-content {
+    grid-template-columns: repeat(4, 1fr);
+    /* Maintain 4 columns on small mobile */
+    gap: 10px;
+    /* Even smaller gap for compact design */
+  }
+
+  .skill-icon {
+    width: 30px;
+    /* Further reduce icon size for small mobile */
+    height: 30px;
+  }
+
+  .skill-item {
+    font-size: 12px;
+    /* Further adjust font size */
+  }
+
+  .skill-item span {
+    font-size: 9px;
+    /* Further reduce font for text */
   }
 }
 
@@ -1569,14 +1619,16 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-
+/* Base styles */
 .contact .info-item {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  /* Increased padding */
   margin-bottom: 30px;
-
-  /* Added margin to separate items */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  /* Added gap for spacing */
 }
 
 .contact .info-item .icon {
@@ -1584,98 +1636,51 @@ section,
   background-color: var(--accent-color);
   width: 56px;
   height: 56px;
-  font-size: 24px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
   margin-right: 20px;
-  /* Increased margin */
 }
 
 .contact .info-item h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
-  /* Added more space below heading */
 }
 
 .contact .info-item p {
   padding: 0;
   margin: 0 0 10px 0;
-  /* Added margin to improve spacing */
   font-size: 14px;
 }
 
-.contact .info-item .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  line-height: 1;
-  margin: 6px 8px 0 0;
-  /* Increased margin */
-  transition: 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-}
-
-.contact .info-item .social-links a:hover {
-  color: var(--accent-color);
-}
-
-/* General Form Styles */
 .contact-form {
   max-width: 800px;
   margin: 50px auto;
-  /* Added margin for top and bottom spacing */
   padding: 30px;
-  /* Increased padding */
   background: linear-gradient(-45deg, #ee7752, #b7cc00, #e2166b, #8da59f);
   background-size: 400% 400%;
   animation: gradient 3s ease infinite;
   border-radius: 10px;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .contact-form .form-control {
   width: 100%;
   padding: 15px 20px;
-  /* Added horizontal padding */
   margin-bottom: 25px;
-  /* Increased margin-bottom for more spacing between inputs */
   font-size: 16px;
-  /* Increased font size for readability */
   background-color: #fff;
   border: 2px solid #e0e0e0;
   border-radius: 5px;
   transition: border-color 0.3s ease-in-out;
 }
 
-.contact-form .form-control:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-.contact-form textarea.form-control {
-  resize: none;
-}
-
 .contact-form .input-icon {
   position: relative;
   margin-bottom: 30px;
-  /* Added space below each input field */
 }
 
 .contact-form .input-icon i {
@@ -1684,8 +1689,6 @@ section,
   left: 15px;
   transform: translateY(-50%);
   font-size: 30px;
-  font-weight: bold;
-  /* Increased icon size */
   color: #cc720b;
 }
 
@@ -1694,15 +1697,12 @@ section,
   /* Adjusted padding for better spacing with icons */
 }
 
-/* Submit Button */
 .submit-btn {
   padding: 15px 50px;
-  /* Increased padding for the button */
   background-color: #c90f94;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 18px;
-  /* Increased font size for visibility */
   cursor: pointer;
   border-radius: 25px;
   transition: background-color 0.3s ease-in-out;
@@ -1717,50 +1717,93 @@ section,
   .contact-form {
     padding: 20px;
     margin: 30px auto;
-    /* Adjusted margin for smaller screens */
   }
 
   .submit-btn {
     padding: 12px 40px;
-    /* Adjusted padding for smaller screens */
   }
 
   .contact .info-item {
     padding: 20px;
-    /* Reduced padding on smaller screens */
     margin-bottom: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact .info-item .icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+    /* Add margin below icon for mobile */
+  }
+
+  .contact .info-item h3 {
+    font-size: 16px;
   }
 
   .contact-form .form-control {
     font-size: 14px;
-    /* Reduced font size for smaller screens */
     padding: 12px 15px;
-    /* Adjusted padding for smaller screens */
+  }
+
+  /* Add spacing between label/icon and form inputs */
+  .contact-form .input-icon {
+    margin-bottom: 20px;
+    padding-top: 15px;
+    /* Add padding to create space between icon and input */
+  }
+
+  .contact-form .form-control {
+    padding-left: 50px;
+    margin-bottom: 30px;
+    /* Increased margin between form elements */
   }
 }
 
 @media (max-width: 480px) {
+  .contact .info-item {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
   .contact .info-item h3 {
-    font-size: 16px;
-    /* Smaller font size for headings */
+    font-size: 14px;
   }
 
   .contact-form .form-control {
     padding: 10px;
-    /* Smaller padding */
     font-size: 14px;
-    /* Smaller font size for inputs */
+  }
+
+  /* Increase spacing between icons and form inputs */
+  .contact-form .input-icon {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    /* Adjust spacing between icon and input */
+  }
+
+  .contact-form .form-control {
+    padding-left: 40px;
+    /* Reduced padding for smaller screens */
+    margin-bottom: 25px;
+    /* Increased margin to separate form inputs */
   }
 
   .submit-btn {
     padding: 10px 30px;
-    /* Adjust button padding for smaller screens */
+  }
+
+  .contact .info-item .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -1825,4 +1868,68 @@ section,
 .footer .credits {
   font-size: 19px;
   padding-top: 5px;
+}
+
+/* responsive design */
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+    font-size: 13px;
+  }
+
+  .footer h3 {
+    font-size: 28px;
+  }
+
+  .footer .social-links a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .footer .tea {
+    font-size: 18px;
+  }
+
+  .footer .copyright {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+
+  .footer .credits {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 0;
+    font-size: 12px;
+  }
+
+  .footer h3 {
+    font-size: 24px;
+  }
+
+  .footer .social-links a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .footer .tea {
+    font-size: 16px;
+  }
+
+  .footer .copyright {
+    font-size: 14px;
+    padding-top: 15px;
+  }
+
+  .footer .credits {
+    font-size: 15px;
+  }
 }
