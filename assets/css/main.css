@@ -480,6 +480,7 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader styling for the website
 --------------------------------------------------------------*/
+
 #preloader {
   position: fixed;
   inset: 0;
@@ -510,6 +511,63 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+
+  #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--background-color), #1e1e1e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease-out;
+  }
+
+  #preloader:before {
+    content: "";
+    position: absolute;
+    border: 8px solid transparent;
+    border-top: 8px solid var(--accent-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: animate-preloader 2s linear infinite;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  #preloader:after {
+    content: "";
+    position: absolute;
+    border: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader-reverse 1.5s linear infinite;
+    box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate-preloader-reverse {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
 }
 
 /*--------------------------------------------------------------
